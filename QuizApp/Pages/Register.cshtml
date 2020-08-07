@@ -1,0 +1,72 @@
+﻿@page
+@model QuizApp.ViewModels.PlayerRegisterModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-info pt-2 pb-3">Register</h2>
+
+<div class="row backgroundWhite border">
+
+    <div class="col-md-8">
+        <form id="formRegister" name="formRegister" method="post" onsubmit="return false;">
+            <div><br /></div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <label asp-for="Username"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Username" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Username" class="text-danger" style="margin-left:267px;"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <label asp-for="Email"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Email" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Email" class="text-danger" style="margin-left:267px;"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <label asp-for="Password"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Password" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Password" class="text-danger" style="margin-left:267px;"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+
+                    </div>
+                    <div class="col-8">
+                        <br />
+                        <button class="btn btn-success form-control" id="btnRegister">Register</button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/CustomScripts/Register.js"></script>
+}
+
